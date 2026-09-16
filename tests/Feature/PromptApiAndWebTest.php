@@ -57,7 +57,7 @@ class PromptApiAndWebTest extends TestCase
             'prompt_text' => 'A futuristic drone flying over cyber metropolis',
             'preview_video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
             'ai_tool_slug' => 'higgsfield-ai',
-            'category_slug' => 'cinematic-film',
+            'category_slug' => 'cinematic-filmmaking',
         ];
 
         // Without token

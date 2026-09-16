@@ -11,6 +11,16 @@ class StorePromptRequest extends FormRequest
      */
     public function authorize(): bool
     {
+        $botToken = env('BOT_TOKEN');
+        $headerToken = $this->header('X-BOT-TOKEN');
+
+        if (!$botToken || $headerToken !== $botToken) {
+            abort(response()->json([
+                'success' => false,
+                'message' => 'Unauthorized: Invalid or missing X-BOT-TOKEN header.',
+            ], 401));
+        }
+
         return true;
     }
 

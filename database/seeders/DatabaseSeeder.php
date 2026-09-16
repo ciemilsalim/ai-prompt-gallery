@@ -15,6 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::updateOrCreate(
+            ['email' => 'admin@example.com'],
+            [
+                'name' => 'Admin PromptHub',
+                'password' => bcrypt('password'),
+                'email_verified_at' => now(),
+            ]
+        );
+
         $this->call([
             CategorySeeder::class,
             AiToolSeeder::class,

@@ -15,10 +15,10 @@ class PromptModelTest extends TestCase
     public function test_seeded_data_exists_and_relationships_work(): void
     {
         $this->seed();
-        $this->assertDatabaseHas('categories', ['slug' => 'cinematic-film']);
-        $this->assertDatabaseHas('categories', ['slug' => '3d-animation']);
-        $this->assertDatabaseHas('categories', ['slug' => 'commercial']);
-        $this->assertDatabaseHas('categories', ['slug' => 'photorealism']);
+        $this->assertDatabaseHas('categories', ['slug' => 'viral-hooks-creator']);
+        $this->assertDatabaseHas('categories', ['slug' => 'ugc-product-reviews']);
+        $this->assertDatabaseHas('categories', ['slug' => 'cinematic-filmmaking']);
+        $this->assertDatabaseHas('categories', ['slug' => 'educontent-explainers']);
 
         $this->assertDatabaseHas('ai_tools', ['slug' => 'higgsfield-ai']);
         $this->assertDatabaseHas('ai_tools', ['slug' => 'kling-ai']);

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,14 +14,38 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Cinematic Film', 'slug' => 'cinematic-film'],
-            ['name' => '3D Animation', 'slug' => '3d-animation'],
-            ['name' => 'Commercial', 'slug' => 'commercial'],
-            ['name' => 'Photorealism', 'slug' => 'photorealism'],
+            [
+                'name' => 'Viral Hooks & Creator',
+                'slug' => 'viral-hooks-creator',
+            ],
+            [
+                'name' => 'UGC & Product Reviews',
+                'slug' => 'ugc-product-reviews',
+            ],
+            [
+                'name' => 'Cinematic & Filmmaking',
+                'slug' => 'cinematic-filmmaking',
+            ],
+            [
+                'name' => 'EduContent & Explainers',
+                'slug' => 'educontent-explainers',
+            ],
+            [
+                'name' => 'Brand Commercial & Ads',
+                'slug' => 'brand-commercial-ads',
+            ],
+            [
+                'name' => '3D Motion & Anime',
+                'slug' => '3d-motion-anime',
+            ],
+            [
+                'name' => 'Photorealism & Lifestyle',
+                'slug' => 'photorealism-lifestyle',
+            ],
         ];
 
         foreach ($categories as $category) {
-            \App\Models\Category::updateOrCreate(
+            Category::updateOrCreate(
                 ['slug' => $category['slug']],
                 ['name' => $category['name']]
             );
