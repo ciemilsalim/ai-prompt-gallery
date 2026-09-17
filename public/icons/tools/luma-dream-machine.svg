@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="lumaGrad1" x1="50" y1="20" x2="80" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF0080"/>
+      <stop offset="1" stop-color="#7928CA"/>
+    </linearGradient>
+    <linearGradient id="lumaGrad2" x1="20" y1="50" x2="50" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7928CA"/>
+      <stop offset="1" stop-color="#0070F3"/>
+    </linearGradient>
+    <linearGradient id="lumaGrad3" x1="50" y1="20" x2="20" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00DFD8"/>
+      <stop offset="1" stop-color="#0070F3"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="#09090b"/>
+  <!-- 3D Prism isometric facets -->
+  <path d="M50 18L78 34V66L50 82L22 66V34L50 18Z" fill="#18181b"/>
+  <path d="M50 18L78 34L50 50L22 34L50 18Z" fill="url(#lumaGrad1)"/>
+  <path d="M50 50L78 34V66L50 82V50Z" fill="url(#lumaGrad2)"/>
+  <path d="M22 34L50 50V82L22 66V34Z" fill="url(#lumaGrad3)"/>
+</svg>
