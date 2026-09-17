@@ -22,6 +22,11 @@ class PromptModelTest extends TestCase
 
         $this->assertDatabaseHas('ai_tools', ['slug' => 'higgsfield-ai']);
         $this->assertDatabaseHas('ai_tools', ['slug' => 'kling-ai']);
+        $this->assertDatabaseHas('ai_tools', ['slug' => 'runway']);
+        $this->assertDatabaseHas('ai_tools', ['slug' => 'hailuo-ai']);
+        $this->assertDatabaseHas('ai_tools', ['slug' => 'luma-dream-machine']);
+        $this->assertDatabaseHas('ai_tools', ['slug' => 'heygen']);
+        $this->assertDatabaseHas('ai_tools', ['slug' => 'pika']);
         $this->assertDatabaseHas('ai_tools', ['slug' => 'openrouter']);
 
         $prompts = Prompt::with(['aiTool', 'category'])->get();

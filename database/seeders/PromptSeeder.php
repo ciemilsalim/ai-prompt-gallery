@@ -17,6 +17,11 @@ class PromptSeeder extends Seeder
     {
         $higgsfield = AiTool::where('slug', 'higgsfield-ai')->first();
         $kling = AiTool::where('slug', 'kling-ai')->first();
+        $runway = AiTool::where('slug', 'runway')->first();
+        $hailuo = AiTool::where('slug', 'hailuo-ai')->first();
+        $luma = AiTool::where('slug', 'luma-dream-machine')->first();
+        $heygen = AiTool::where('slug', 'heygen')->first();
+        $pika = AiTool::where('slug', 'pika')->first();
         $openrouter = AiTool::where('slug', 'openrouter')->first();
 
         $viralHooks = Category::where('slug', 'viral-hooks-creator')->first();
@@ -28,7 +33,7 @@ class PromptSeeder extends Seeder
         $photorealism = Category::where('slug', 'photorealism-lifestyle')->first();
 
         $prompts = [
-            // 1. Viral Hooks & Creator
+            // 1. Viral Hooks & Creator (Kling AI)
             [
                 'ai_tool_id' => $kling?->id,
                 'category_id' => $viralHooks?->id,
@@ -47,102 +52,102 @@ class PromptSeeder extends Seeder
                 'is_published' => true,
             ],
 
-            // 2. UGC & Product Reviews
+            // 2. UGC & Product Reviews (HeyGen - Avatar / Creator)
             [
-                'ai_tool_id' => $higgsfield?->id,
+                'ai_tool_id' => $heygen?->id,
                 'category_id' => $ugc?->id,
-                'title' => 'Aesthetic UGC Unboxing: Minimalist Vitamin C Glow Serum',
-                'slug' => 'aesthetic-ugc-unboxing-minimalist-vitamin-c-glow-serum',
-                'prompt_text' => 'Authentic UGC creator style smartphone video, female hands unboxing aesthetic pastel skincare packaging on a clean white desk, lifting frosted amber dropper bottle, soft natural bedroom sunlight, macro lens focus on a golden serum droplet falling in slow motion, relatable influencer aesthetic.',
-                'negative_prompt' => 'distorted fingers, bad hands, plastic look, fake CGI, overexposed',
-                'model_version' => 'Higgsfield Cinema v2.1',
+                'title' => 'HeyGen AI Talking Creator: Viral TikTok Affiliate Product Pitch',
+                'slug' => 'heygen-ai-talking-creator-viral-tiktok-affiliate-product-pitch',
+                'prompt_text' => 'Realistic young female content creator avatar in cozy home studio wearing casual oversized knitwear, speaking expressively directly into camera, natural blinking and lively hand gestures, holding up a matte skincare bottle, TikTok creator desk background with RGB lighting, perfect lip-sync.',
+                'negative_prompt' => 'stiff head, unnatural mouth movements, robotic voice, uncanny valley',
+                'model_version' => 'HeyGen Interactive Avatar v2',
                 'aspect_ratio' => '9:16',
                 'preview_video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
-                'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&auto=format&fit=crop&q=80',
+                'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80',
                 'custom_affiliate_url' => null,
-                'views_count' => 3180,
-                'copies_count' => 540,
-                'clicks_count' => 228,
+                'views_count' => 6100,
+                'copies_count' => 1240,
+                'clicks_count' => 489,
                 'is_published' => true,
             ],
 
-            // 3. Cinematic & Filmmaking
+            // 3. Cinematic & Filmmaking (Runway Gen-3 Alpha)
             [
-                'ai_tool_id' => $higgsfield?->id,
+                'ai_tool_id' => $runway?->id,
                 'category_id' => $cinematic?->id,
-                'title' => 'Cyberpunk Neon Samurai in Rain-Slicked Neo Tokyo',
-                'slug' => 'cyberpunk-neon-samurai-in-rain-slicked-neo-tokyo',
-                'prompt_text' => 'Cinematic slow-motion tracking shot of a lone cyber-samurai wearing matte carbon armor walking down a rain-drenched Shinjuku alleyway, neon holographic billboards reflecting on dark puddles, anamorphic lens flare, volumetric fog, moody Blade Runner film grading, IMAX 8k.',
-                'negative_prompt' => 'low quality, blurry, deformed, cartoon, amateur footage, oversaturated',
-                'model_version' => 'Higgsfield Cinema v2.1',
+                'title' => 'Runway Gen-3: Deep Space Exploration Ship Cinematic Reveal',
+                'slug' => 'runway-gen-3-deep-space-exploration-ship-cinematic-reveal',
+                'prompt_text' => 'FPV cinematic drone camera pulling backward through an icy asteroid belt to reveal a colossal interstellar science explorer starship, thruster plasma exhaust glowing violet, sunlight reflecting off solar panel mirrors, Hans Zimmer interstellar mood, hyper-detailed 70mm anamorphic footage.',
+                'negative_prompt' => 'cartoon, low-polygon, motion artifacts, jittery frame, oversaturated',
+                'model_version' => 'Runway Gen-3 Alpha',
                 'aspect_ratio' => '9:16',
                 'preview_video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
-                'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80',
+                'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80',
                 'custom_affiliate_url' => null,
-                'views_count' => 5820,
-                'copies_count' => 1120,
-                'clicks_count' => 450,
+                'views_count' => 7420,
+                'copies_count' => 1480,
+                'clicks_count' => 620,
                 'is_published' => true,
             ],
 
-            // 4. EduContent & Explainers
+            // 4. EduContent & Explainers (Hailuo AI / MiniMax)
             [
-                'ai_tool_id' => $openrouter?->id,
+                'ai_tool_id' => $hailuo?->id,
                 'category_id' => $edu?->id,
-                'title' => '3D Holographic Quantum Physics Explainer Animation',
-                'slug' => '3d-holographic-quantum-physics-explainer-animation',
-                'prompt_text' => 'Futuristic educational explainer motion graphic, rotating 3D glowing atomic nucleus with orbiting neon blue electrons, smooth camera orbit, clean minimal dark studio background, floating mathematical formulas, crisp high-tech science documentary visualization.',
-                'negative_prompt' => 'pixelated, messy diagram, low res, watermark, noisy text',
-                'model_version' => 'OpenRouter Multi-Engine',
+                'title' => 'Hailuo AI: Microscopic Immune Cell Defending Body Animation',
+                'slug' => 'hailuo-ai-microscopic-immune-cell-defending-body-animation',
+                'prompt_text' => 'Macro 3D medical documentary animation, realistic white blood cell engulfing a glowing virus particle in bloodstream, fluid physics simulation, microscopic depth of field, translucent cellular membranes, educational voiceover ready, high science documentary realism.',
+                'negative_prompt' => 'flat 2d, schematic diagram, inaccurate anatomy, pixelated',
+                'model_version' => 'Hailuo T2V-01',
                 'aspect_ratio' => '9:16',
                 'preview_video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4',
-                'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&auto=format&fit=crop&q=80',
+                'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&auto=format&fit=crop&q=80',
                 'custom_affiliate_url' => null,
-                'views_count' => 2840,
-                'copies_count' => 460,
-                'clicks_count' => 180,
+                'views_count' => 3640,
+                'copies_count' => 720,
+                'clicks_count' => 275,
                 'is_published' => true,
             ],
 
-            // 5. Brand Commercial & Ads
+            // 5. Brand Commercial & Ads (Luma Dream Machine)
             [
-                'ai_tool_id' => $kling?->id,
+                'ai_tool_id' => $luma?->id,
                 'category_id' => $commercial?->id,
-                'title' => 'Luxury Perfume Commercial Bottle Floating in Crystal Water',
-                'slug' => 'luxury-perfume-commercial-bottle-floating-in-crystal-water',
-                'prompt_text' => 'High-end luxury commercial slow-motion shot, minimalist matte black perfume bottle submerging into crystal clear rippling turquoise water, microscopic air bubbles rising, dramatic studio lighting, macro lens, hyper-detailed, Cannes Lions quality.',
-                'negative_prompt' => 'cheap packaging, murky water, low resolution, bad lighting, grainy',
-                'model_version' => 'Kling 1.5 Pro',
+                'title' => 'Luma Dream Machine: Sleek Electric Hypercar Neon Tunnel Flyby',
+                'slug' => 'luma-dream-machine-sleek-electric-hypercar-neon-tunnel-flyby',
+                'prompt_text' => 'Continuous dynamic low-angle tracking shot orbiting around an aerodynamic matte-black electric hypercar drifting through a cyber neon tunnel, tire smoke with laser reflections, seamless 3D spatial camera motion, high-end automotive Super Bowl commercial aesthetics.',
+                'negative_prompt' => 'morphing car body, wheel distortion, erratic camera cuts, low resolution',
+                'model_version' => 'Dream Machine v1.5',
                 'aspect_ratio' => '9:16',
                 'preview_video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
-                'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&auto=format&fit=crop&q=80',
+                'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600&auto=format&fit=crop&q=80',
                 'custom_affiliate_url' => null,
-                'views_count' => 3890,
-                'copies_count' => 670,
-                'clicks_count' => 295,
+                'views_count' => 5210,
+                'copies_count' => 980,
+                'clicks_count' => 415,
                 'is_published' => true,
             ],
 
-            // 6. 3D Motion & Anime
+            // 6. Viral Hooks (Pika Squish Effect)
             [
-                'ai_tool_id' => $kling?->id,
-                'category_id' => $animation?->id,
-                'title' => 'Cute 3D Pixar Style Robot Chef Cooking Golden Pancakes',
-                'slug' => 'cute-3d-pixar-style-robot-chef-cooking-golden-pancakes',
-                'prompt_text' => '3D animation octane render, a tiny charming brass robot wearing a tall chef hat flipping golden fluffy pancakes in a sunlit rustic kitchen, warm morning sunlight, vibrant colors, Pixar Disney aesthetics, depth of field, adorable expressions.',
-                'negative_prompt' => 'ugly, 2d, low poly, noisy, dark, harsh shadows, creepy',
-                'model_version' => 'Kling 1.5 Pro',
+                'ai_tool_id' => $pika?->id,
+                'category_id' => $viralHooks?->id,
+                'title' => 'Pika Viral Pikaffects: Hydraulic Press Squeezing Inflatable Planet',
+                'slug' => 'pika-viral-pikaffects-hydraulic-press-squeezing-inflatable-planet',
+                'prompt_text' => 'Satisfying viral ASMR video, hydraulic press squishing a squishy elastic globe Earth into soft jelly slime with exaggerated bouncy physics, jelly splatter, bright studio rim light, TikTok viral odd satisfaction video format, 60fps.',
+                'negative_prompt' => 'violent, messy blur, bad physics, low framerate',
+                'model_version' => 'Pika 2.0 Pikaffects',
                 'aspect_ratio' => '9:16',
                 'preview_video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
                 'preview_thumbnail_url' => 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80',
                 'custom_affiliate_url' => null,
-                'views_count' => 4120,
-                'copies_count' => 780,
-                'clicks_count' => 310,
+                'views_count' => 8900,
+                'copies_count' => 1750,
+                'clicks_count' => 740,
                 'is_published' => true,
             ],
 
-            // 7. Photorealism & Lifestyle
+            // 7. Photorealism & Lifestyle (Higgsfield AI)
             [
                 'ai_tool_id' => $higgsfield?->id,
                 'category_id' => $photorealism?->id,
