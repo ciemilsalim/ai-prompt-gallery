@@ -1,3 +1,4 @@
+import React from 'react';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -23,64 +24,76 @@ export default function Register() {
 
     return (
         <GuestLayout>
-            <Head title="Register" />
+            <Head title="Daftar Akun - PromptHub Admin" />
 
-            <form onSubmit={submit}>
+            <div className="mb-6 text-center">
+                <h2 className="text-lg font-bold text-white tracking-tight">
+                    Buat Akun Kreator Baru
+                </h2>
+                <p className="text-xs text-zinc-400 mt-1">
+                    Daftar untuk mengunggah dan mengelola koleksi prompt AI video Anda.
+                </p>
+            </div>
+
+            <form onSubmit={submit} className="space-y-4">
                 <div>
-                    <InputLabel htmlFor="name" value="Name" />
+                    <InputLabel htmlFor="name" value="Nama Lengkap" />
 
                     <TextInput
                         id="name"
                         name="name"
                         value={data.name}
-                        className="mt-1 block w-full"
+                        placeholder="Nama Anda"
+                        className="block w-full"
                         autoComplete="name"
                         isFocused={true}
                         onChange={(e) => setData('name', e.target.value)}
                         required
                     />
 
-                    <InputError message={errors.name} className="mt-2" />
+                    <InputError message={errors.name} className="mt-1.5 text-xs text-red-400" />
                 </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="email" value="Email" />
+                <div>
+                    <InputLabel htmlFor="email" value="Alamat Email" />
 
                     <TextInput
                         id="email"
                         type="email"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                        placeholder="email@example.com"
+                        className="block w-full"
                         autoComplete="username"
                         onChange={(e) => setData('email', e.target.value)}
                         required
                     />
 
-                    <InputError message={errors.email} className="mt-2" />
+                    <InputError message={errors.email} className="mt-1.5 text-xs text-red-400" />
                 </div>
 
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                <div>
+                    <InputLabel htmlFor="password" value="Kata Sandi (Password)" />
 
                     <TextInput
                         id="password"
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        placeholder="Minimal 8 karakter"
+                        className="block w-full"
                         autoComplete="new-password"
                         onChange={(e) => setData('password', e.target.value)}
                         required
                     />
 
-                    <InputError message={errors.password} className="mt-2" />
+                    <InputError message={errors.password} className="mt-1.5 text-xs text-red-400" />
                 </div>
 
-                <div className="mt-4">
+                <div>
                     <InputLabel
                         htmlFor="password_confirmation"
-                        value="Confirm Password"
+                        value="Konfirmasi Kata Sandi"
                     />
 
                     <TextInput
@@ -88,7 +101,8 @@ export default function Register() {
                         type="password"
                         name="password_confirmation"
                         value={data.password_confirmation}
-                        className="mt-1 block w-full"
+                        placeholder="Ulangi kata sandi"
+                        className="block w-full"
                         autoComplete="new-password"
                         onChange={(e) =>
                             setData('password_confirmation', e.target.value)
@@ -98,21 +112,26 @@ export default function Register() {
 
                     <InputError
                         message={errors.password_confirmation}
-                        className="mt-2"
+                        className="mt-1.5 text-xs text-red-400"
                     />
                 </div>
 
-                <div className="mt-4 flex items-center justify-end">
-                    <Link
-                        href={route('login')}
-                        className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                        Already registered?
-                    </Link>
-
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Register
+                <div className="pt-2">
+                    <PrimaryButton className="w-full py-3" disabled={processing}>
+                        {processing ? 'Mendaftarkan...' : 'Daftar Akun Sekarang'}
                     </PrimaryButton>
+                </div>
+
+                <div className="pt-3 border-t border-zinc-800/80 text-center">
+                    <p className="text-xs text-zinc-400">
+                        Sudah punya akun?{' '}
+                        <Link
+                            href={route('login')}
+                            className="text-emerald-400 hover:underline font-semibold"
+                        >
+                            Masuk di sini
+                        </Link>
+                    </p>
                 </div>
             </form>
         </GuestLayout>
